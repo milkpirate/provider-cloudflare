@@ -1,0 +1,24 @@
+apiVersion: waitingroom.upbound.io/v1alpha1
+kind: Room
+metadata:
+  annotations:
+    meta.upbound.io/example-id: waitingroom/v1alpha1/room
+  labels:
+    testing.upbound.io/example-name: example
+  name: example
+spec:
+  forProvider:
+    additionalRoutes:
+    - host: shop1.example.com
+      path: /example-path
+    - host: shop2.example.com
+    cookieSuffix: queue1
+    host: foo.example.com
+    name: foo
+    newUsersPerMinute: 200
+    path: /
+    queueingStatusCode: 200
+    totalActiveUsers: 200
+    zoneIdSelector:
+      matchLabels:
+        testing.upbound.io/example-name: example

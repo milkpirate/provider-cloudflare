@@ -1,0 +1,51 @@
+apiVersion: teams.upbound.io/v1alpha1
+kind: Account
+metadata:
+  annotations:
+    meta.upbound.io/example-id: teams/v1alpha1/account
+  labels:
+    testing.upbound.io/example-name: example
+  name: example
+spec:
+  forProvider:
+    accountIdSelector:
+      matchLabels:
+        testing.upbound.io/example-name: example
+    antivirus:
+    - enabledDownloadPhase: true
+      enabledUploadPhase: false
+      failClosed: true
+      notificationSettings:
+      - enabled: true
+        message: you are blocked
+        supportUrl: https://example.com/blocked
+    blockPage:
+    - backgroundColor: '#000000'
+      footerText: hello
+      headerText: hello
+      logoPath: https://example.com/logo.jpg
+    bodyScanning:
+    - inspectionMode: deep
+    extendedEmailMatching:
+    - enabled: true
+    fips:
+    - tls: true
+    logging:
+    - redactPii: true
+      settingsByRuleType:
+      - dns:
+        - logAll: false
+          logBlocks: true
+        http:
+        - logAll: true
+          logBlocks: true
+        l4:
+        - logAll: false
+          logBlocks: true
+    protocolDetectionEnabled: true
+    proxy:
+    - rootCa: true
+      tcp: true
+      udp: true
+    tlsDecryptEnabled: true
+    urlBrowserIsolationEnabled: true
