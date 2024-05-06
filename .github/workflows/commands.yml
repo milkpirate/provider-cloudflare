@@ -5,3 +5,5 @@ on: issue_comment
 jobs:
   comment-commands:
     uses: upbound/uptest/.github/workflows/provider-commands.yml@main
+    with:
+      token: ${{ secrets.GITHUB_TOKEN }}

@@ -13,3 +13,5 @@ on:
 jobs:
   backport:
     uses: upbound/uptest/.github/workflows/provider-backport.yml@main
+    with:
+      github_token: ${{ secrets.GITHUB_TOKEN }}
