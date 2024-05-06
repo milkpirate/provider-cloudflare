@@ -10,7 +10,7 @@ Cloudflare API.
 Install the provider by using the following command after changing the image tag
 to the [latest release](https://marketplace.upbound.io/providers/milkpirate/provider-cloudflare):
 ```
-up ctp provider install milkpirate/provider-cloudflare:v0.1.0
+up ctp provider install ghcr.io/milkpirate/provider-cloudflare:<version>
 ```
 
 Alternatively, you can use declarative installation:
@@ -21,7 +21,7 @@ kind: Provider
 metadata:
   name: provider-cloudflare
 spec:
-  package: milkpirate/provider-cloudflare:v0.1.0
+  package: ghcr.io/milkpirate/provider-cloudflare:<version>
 EOF
 ```
 
