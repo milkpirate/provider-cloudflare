@@ -15,7 +15,7 @@ func Configure(p *config.Provider) {
 			Type: "github.com/milkpirate/provider-cloudflare/apis/zone/v1alpha1.Zone",
 		}
 	})
-	p.AddResourceConfigurator("cloudflare_argo_tunnel", func(r *config.Resource) {
+	p.AddResourceConfigurator("cloudflare_tunnel", func(r *config.Resource) {
 		r.ShortGroup = shortGroupName
 		r.Kind = "Tunnel"
 		r.References["account_id"] = config.Reference{

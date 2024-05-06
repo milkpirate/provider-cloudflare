@@ -1,0 +1,32 @@
+apiVersion: dlp.upbound.io/v1alpha1
+kind: Profile
+metadata:
+  annotations:
+    meta.upbound.io/example-id: dlp/v1alpha1/profile
+  labels:
+    testing.upbound.io/example-name: creds
+  name: creds
+spec:
+  forProvider:
+    accountIdSelector:
+      matchLabels:
+        testing.upbound.io/example-name: example
+    allowedMatchCount: 3
+    entry:
+    - enabled: true
+      id: d8fcfc9c-773c-405e-8426-21ecbb67ba93
+      name: Amazon AWS Access Key ID
+    - enabled: false
+      id: 2c0e33e1-71da-40c8-aad3-32e674ad3d96
+      name: Amazon AWS Secret Access Key
+    - enabled: true
+      id: 4e92c006-3802-4dff-bbe1-8e1513b1c92a
+      name: Microsoft Azure Client Secret
+    - enabled: false
+      id: 5c713294-2375-4904-abcf-e4a15be4d592
+      name: SSH Private Key
+    - enabled: true
+      id: 6c6579e4-d832-42d5-905c-8e53340930f2
+      name: Google GCP API Key
+    name: Credentials and Secrets
+    type: predefined
