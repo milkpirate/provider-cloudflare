@@ -1,0 +1,25 @@
+apiVersion: spectrum.upbound.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    meta.upbound.io/example-id: spectrum/v1alpha1/application
+  labels:
+    testing.upbound.io/example-name: example
+  name: example
+spec:
+  forProvider:
+    dns:
+    - name: ssh.example.com
+      type: CNAME
+    edgeIps:
+    - ips:
+      - 203.0.113.1
+      - 203.0.113.2
+      type: static
+    originDirect:
+    - tcp://192.0.2.1:22
+    protocol: tcp/22
+    trafficType: direct
+    zoneIdSelector:
+      matchLabels:
+        testing.upbound.io/example-name: example
